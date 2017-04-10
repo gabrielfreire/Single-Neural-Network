@@ -23,7 +23,7 @@ public class Perceptron {
         }
     }
 
-    public void train(float learningRate, int epochs){
+    public void train(float learningRate){
 
         float totalError = 1;
         while(totalError != 0){
@@ -38,6 +38,7 @@ public class Perceptron {
                 //Calculate the weights according to the error and learning rate
                 for(int j = 0; j < numOfWeights; j++){
                     weights[j] = weights[j] + learningRate * input[i][j] * error;
+                    System.out.println("Updated weight: " + weights[j]);
                 }
             }
             System.out.println("Keep on training the network, error is: " + totalError);
